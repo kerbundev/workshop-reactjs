@@ -1,26 +1,45 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Home from './Components/home.component';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            homeMounted: true
+        };
+    }
+    onChangeHomeMounted() {
+        this.setState({
+            homeMounted: !this.state.homeMounted
+        });
+    }
+
+    render() {
+        let homeCmp = "";
+        if (this.state.homeMounted) {
+            homeCmp = (
+                <Home
+                    name={"Facundo"}
+                    initialAge={25}
+                />
+            );
+        }
+        return (
+            <div className="container">
+                <div className="row">
+                </div>
+                <div className="row">
+                    <div className="col-xs-10 col-xs-offset-1">
+                        {homeCmp}
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-xs-10 col-xs-offset-1">
+                        <button onClick={this.onChangeHomeMounted.bind(this)} className="btn btn-primary">(Un)Mount Home Component</button>
+                    </div>
+                </div>
+            </div>
+        );
+    }
 }
-
 export default App;
