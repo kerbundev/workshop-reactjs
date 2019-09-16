@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Node from './node.component';
 class Home extends React.Component {
 constructor(props) {
     super(props);
@@ -55,8 +56,9 @@ render() {
     return (
         <div>
             <h2>Component LifeCycle Methods Test!!</h2>
-           <p>Your name is {this.state.name}, your age is {this.state.age}</p>
-             <hr/>
+                {/* <p>Your name is {this.state.name}, your age is {this.state.age}</p> */}
+            <Node name={this.state.name} age={this.state.age}/>
+            <hr/>
             <button onClick={this.onMakeOlder} className="btn btn-primary">Make me older!</button>
             <hr/>
         </div>
