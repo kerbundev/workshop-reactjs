@@ -23,7 +23,14 @@ class App extends Component {
                 initialAge={25}
             />
         );
-    } 
+    } else {
+        homeCmp = (
+            <Home
+                name={"Alvaro"}
+                initialAge={23}
+            />
+        );
+    }
       return (
         <div className="container">
             <div className="row">
