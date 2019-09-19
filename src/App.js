@@ -7,10 +7,12 @@ import HomePage from './Pages/homepage/homepage.component';
 import ContactPage from './Pages/contactpage/contactpage.component';
 import AboutPage from './Pages/aboutpage/aboutpage.component';
 import SignInPage from './Pages/sign-in-page/sign-in.component';
+import SignUpPage from './Pages/sign-up-page/sign-up.component';
 
 import {Route, Switch} from 'react-router-dom';
 
 class App extends Component {
+
 
   render() {
       return (
@@ -21,6 +23,7 @@ class App extends Component {
             <Route path='/about' component={AboutPage}/>
             <Route path='/contact' component={ContactPage}/>
             <Route path='/signin' component={SignInPage}/>
+            <Route path='/signup' component={SignUpPage}/>
             </Switch>
           </div>
       );

@@ -1,54 +1,56 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import './sign-in.styles.scss';
 
 import FormInput from '../../Components/form-input/form-input.component';
 import CustomButton from '../../Components/custom-button/custom-button.component';
 
-import './sign-in.styles.scss';
+class SingInPage extends Component {
+	constructor(){
+		super();
 
-class SignInPage extends Component {
-	constructor(props) {
-		super(props);
 		this.state = {
-			email: '',
-			password: ''
-		};
+			email:'',
+			password:''
+		}
 	}
 
-	handleSubmit = async event => {
+	handleSubmit = event => {
 		event.preventDefault();
-		//por el momento hace nada...
-	};
+		//aqui haremos la autenticacion
+	}
 
 	handleChange = event => {
-		const { value, name } = event.target;
-		this.setState({ [name]: value });
-	};
+		const {value, name} = event.target;
 
-	render() {
-		return (
-			<div className="sign-in">
-				<h3>Sign in with your email and password</h3>
+		this.setState({ [name] : value});
+	}
+
+	render(){
+		return(
+			<div>
+				<h3>Sign In with email and password</h3>
 				<form onSubmit={this.handleSubmit}>
 					<FormInput
-						handleChange={this.handleChange}
-						name="email"
-						type="email"
-						value={this.state.email}
-						label="email"
-						required
+					handleChange={this.handleChange}
+					name='email'
+					label='email'
+					type='email'
+					value={this.state.email}
+					required
 					></FormInput>
 					<FormInput
-						handleChange={this.handleChange}
-						name="password"
-						type="password"
-						value={this.state.password}
-						label="password"
-						required
+					handleChange={this.handleChange}
+					name='password'
+					label='password'
+					type='password'
+					value={this.state.password}
+					required
 					></FormInput>
-					<CustomButton type="submit">SIGN IN</CustomButton>
+					<CustomButton type='submit'>Submit</CustomButton>
 				</form>
 			</div>
 		);
 	}
 }
-export default SignInPage;
+
+export default SingInPage;
