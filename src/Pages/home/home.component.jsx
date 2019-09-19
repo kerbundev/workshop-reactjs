@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './homepage.styles.scss';
+import './home.styles.scss';
 
 import SearchBox from '../../Components/search-box/search-box.component';
 import CollectionPreview from '../../Components/collection-preview/collection-preview.component';
@@ -7,6 +7,7 @@ import ITEM_DATA from '../../items.data';
 class HomePage extends Component {
 	constructor() {
 		super();
+		console.log(this.props);
 
 		this.state = {
             filteredItems: ITEM_DATA,
