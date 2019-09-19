@@ -4,6 +4,7 @@ import './homepage.styles.scss';
 import SearchBox from '../../Components/search-box/search-box.component';
 import CollectionPreview from '../../Components/collection-preview/collection-preview.component';
 import ITEM_DATA from '../../items.data';
+
 class HomePage extends Component {
 	constructor() {
 		super();
@@ -17,7 +18,9 @@ class HomePage extends Component {
 	handleSearch = (inputText) => {
 
 		if ('' === inputText) {
-			return;
+			return this.setState({
+				filteredItems : this.state.items
+			});
 		}
 
 		const filteredItems = this.state.items.filter(item =>
@@ -29,6 +32,7 @@ class HomePage extends Component {
 	};
 
 	render() {
+		console.log(this.props);
 		return (
 			<div className="homepage">
 				<h3>Consigue mejores precios y reduce costos de envío</h3>
