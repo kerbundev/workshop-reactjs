@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import './homepage.styles.scss';
 
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+
 import SearchBox from '../../Components/search-box/search-box.component';
 import CollectionPreview from '../../Components/collection-preview/collection-preview.component';
-import ITEM_DATA from '../../items.data';
 
 class HomePage extends Component {
 	constructor() {
 		super();
 
 		this.state = {
-            filteredItems: ITEM_DATA,
-            items: ITEM_DATA
+            filteredItems: [],
+            items: []
 		};
 	}
 
@@ -30,6 +32,30 @@ class HomePage extends Component {
 			filteredItems: filteredItems
 		});
 	};
+
+	loadAllItems = () => {
+		const firestore = firebase.firestore();
+		const itemsRef = firestore.collection('items/');
+
+		this.setState({
+			filteredItems: [],
+			items: []
+		});
+
+		itemsRef.get().then(items => {
+			const itemList = items.docs;
+			itemList.forEach(item => {
+				const id = item.id;
+				this.setState(prevState => ({
+					items: [...prevState.items, { id, ...item.data() }],
+					filteredItems: [...prevState.items, { id, ...item.data() }]
+				}));
+			});
+		});
+	};
+	componentDidMount() {
+		this.loadAllItems();
+	}
 
 	render() {
 		console.log(this.props);

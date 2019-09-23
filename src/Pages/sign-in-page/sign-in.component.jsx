@@ -4,6 +4,8 @@ import './sign-in.styles.scss';
 import FormInput from '../../Components/form-input/form-input.component';
 import CustomButton from '../../Components/custom-button/custom-button.component';
 
+import { auth } from '../../firebase/firebase.utils';
+
 class SingInPage extends Component {
 	constructor(){
 		super();
@@ -14,9 +16,16 @@ class SingInPage extends Component {
 		}
 	}
 
-	handleSubmit = event => {
+	handleSubmit = async event => {
 		event.preventDefault();
-		//aqui haremos la autenticacion
+		const { email, password } = this.state;
+
+		try {
+			await auth.signInWithEmailAndPassword(email, password);
+			this.setState({ email: '', password: '' });
+		} catch (error) {
+			alert('Usuario o Contraseña INCORRECTOS.', error);
+		}
 	}
 
 	handleChange = event => {
@@ -27,7 +36,7 @@ class SingInPage extends Component {
 
 	render(){
 		return(
-			<div>
+			<div className="sign-in">
 				<h3>Sign In with email and password</h3>
 				<form onSubmit={this.handleSubmit}>
 					<FormInput
