@@ -1,7 +1,9 @@
 import React from 'react';
 import './collection-item.styles.scss';
 
-const CollectionItem = ({title, price, shortDescription, category, daysLeft}) => (
+import {Link} from 'react-router-dom';
+
+const CollectionItem = ({id, title, price, shortDescription, category, daysLeft}) => (
 	<div className="card">
 		<div className="card-header">
 			<p className='item-category'>{category.toUpperCase()}</p>
@@ -13,7 +15,7 @@ const CollectionItem = ({title, price, shortDescription, category, daysLeft}) =>
 			</h4>
 			<p>{shortDescription}</p>
 			<p>BUY FOR: ${price}</p>
-			<div className='offer-link'>Offer</div>
+			<Link className='offer-link' to={`itempage/${id}`}>Offer</Link>
 		</div>
 	</div>
 );

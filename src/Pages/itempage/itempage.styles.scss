@@ -1,15 +1,16 @@
-.item-page {
-    display: flex;
-    flex-direction: row;
-    margin-top: 50px;
-    width: 80%;
-    margin: 40px auto;
-    height: 100%;
-    padding: 0px 50px 0px 50px;
-    .item-content {
-        display: flex;
-        flex-direction: column;
-        width: 60%;
 
+    .item-page {
+        display: flex;
+        flex-direction: row;
+        margin-top: 50px;
+        width: 80%;
+        margin: 40px auto;
+        height: 100%;
+        padding: 0px 50px 0px 50px;
+        .item-content {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+    
+        }
     }
-}

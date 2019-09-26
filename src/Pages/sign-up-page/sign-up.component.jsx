@@ -55,11 +55,11 @@ class SignUpPage extends Component {
 				<span>Sign up with your email</span>
 				<form className="sign-up-form" onSubmit={this.handleSubmit}>
 					<FormInput
-						type="displayName"
-						name="displayName"
-						value={displayName}
-						handleChange={this.handleChange}
-						label="Display Name"
+						type = "displayName"
+						name = "displayName"
+						value = {displayName}
+						handleChange = {this.handleChange}
+						label = "Display Name"
 						required
 					/>
 					<FormInput

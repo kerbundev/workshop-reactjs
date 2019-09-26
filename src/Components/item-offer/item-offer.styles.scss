@@ -1,0 +1,19 @@
+.item-offer {
+    margin-bottom: 10px;
+    padding: 10px 10px 10px 10px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    border: 2px solid #f4f4f4;
+    .background-image {
+        width: 30%;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden; 
+        border: 5px solid #fdf1f1;
+        border-radius: 10px;
+    }
+    .offer-detail{
+        margin-left: 10px;
+    }
+}

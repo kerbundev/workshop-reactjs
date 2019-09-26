@@ -1,0 +1,22 @@
+.item-offer-list {
+    background-color: white;
+    padding: 10px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 500px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #EE7E7D;
+    border-radius: 10px;
+  }

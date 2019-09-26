@@ -67,7 +67,7 @@ class App extends Component {
 					/>
             <Route path='/signup' component={SignUpPage}/>
             <Route 
-						path="/itempage/:itemId" 
+					path="/itempage/:itemId" 
 					render={()=> <ItemPage currentUser={this.state.currentUser}/>}
 					/>
             </Switch>
