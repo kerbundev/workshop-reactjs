@@ -21,7 +21,7 @@ class ItemPage extends Component{
 	}
 
 	componentDidMount() {
-		console.log(this.props.match);
+		// console.log(this.props.match);
 		const firestore = firebase.firestore();
 		const itemsRef = firestore.doc(`items/${this.props.match.params.itemId}`);
 
@@ -43,7 +43,7 @@ class ItemPage extends Component{
 	}
 
 	render(){
-		console.log(this.props)
+		// console.log(this.props)
 		return(
 			<div className='item-page'>
 				<div className='item-content'>
